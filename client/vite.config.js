@@ -2,13 +2,15 @@ import { defineConfig } from "vite";
 import react, { reactCompilerPreset } from "@vitejs/plugin-react";
 import babel from "@rolldown/plugin-babel";
 import tailwindcss from "@tailwindcss/vite";
+import { qrcode } from "vite-plugin-qrcode";
 
 // https://vite.dev/config/
 export default defineConfig({
 	plugins: [
 		react(),
-		tailwindcss(),
 		babel({ presets: [reactCompilerPreset()] }),
+		tailwindcss(),
+		qrcode(),
 	],
 	server: {
 		host: "0.0.0.0",
